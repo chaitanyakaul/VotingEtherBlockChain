@@ -132,7 +132,7 @@ export class OwnerComponent{
         console.log('Transaction Approved');
       })
       .catch(e => {
-        console.log(e);
+        console.log(e);fail()
         this.setStatus('Error getting balance; see log.');
       });
   }
