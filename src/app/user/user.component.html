@@ -1,0 +1,85 @@
+<br>
+<div class="container">
+  <h1>Customer Name: </h1><h3>{{finalUsers.name}}</h3>
+  <div class="form-group table-responsive">
+    <table class="table table-responsive">
+      <tr>
+        <th>
+          Annuity Balance
+        </th>
+        <th>
+          Long Term Balance
+        </th>
+      </tr>
+      <tr>
+        <td>{{finalUsers.annuityBalance}}</td>
+        <td>{{finalUsers.longTermBalance}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="form-group form-group-lg">
+    <form #registerUser="ngForm">
+      <p class="control">
+        <input
+          [(ngModel)]="nameOfThePerson"
+          class="form-control"
+          type="text"
+          placeholder="Name to be registered"
+          name="sendingAmount"
+          required
+          #sendingAmountModel="ngModel">
+      </p>
+      <div class="field is-grouped">
+        <p class="">
+          <button
+            [disabled]="!registerUser.valid"
+            (click)="registerNewUser()"
+            class="btn btn-primary">
+            Register New User
+          </button>
+        </p>
+      </div>
+      <form #transferMoney="ngForm">
+        <div class="row">
+          <div class="col-md-6">
+            <select [(ngModel)]="fromValue" name="fromValue" class="form-control selectpicker">
+              <option>Annuity</option>
+              <option>Long Term</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <select [(ngModel)]="toValue" name="toValue" class="col-sm-6 form-control selectpicker">
+              <option>Annuity</option>
+              <option>Long Term</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <p class="control">
+          <input
+            [(ngModel)]="sendingAmount"
+            class="form-control"
+            type="text"
+            placeholder="Amount to be Transferred"
+            name="amount"
+            required
+            #sendCoinModel="ngModel">
+        </p>
+        <div class="field is-grouped">
+          <p class="control">
+            <button
+              [disabled]="!transferMoney.valid"
+              (click)="makeRequest()"
+              class="btn btn-primary">
+              Request to Transfer
+            </button>
+          </p>
+        </div>
+      </form>
+    </form>
+
+  </div>
+
+
+
+</div>

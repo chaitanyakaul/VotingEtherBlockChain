@@ -1,0 +1,38 @@
+<div class="form-group table-responsive">
+  <table class="table table-responsive">
+    <tr>
+      <th>
+       User Address
+      </th>
+      <th>
+        User Name
+      </th>
+      <th>
+        Amount
+      </th>
+      <th>
+        From Account
+      </th>
+      <th>
+        To Account
+      </th>
+    </tr>
+    <tr>
+      <td>{{request.userAddress}}</td>
+      <td>{{request.userName}}</td>
+      <td>{{request.amount}}</td>
+      <td>{{request.fromAccount}}</td>
+      <td>{{request.toAccount}}</td>
+    </tr>
+  </table>
+</div>
+<div class="field is-grouped">
+  <p class="">
+    <button
+      (click)="approveTransaction()"
+      class="btn btn-primary">
+      Approve the transaction
+    </button>
+  </p>
+</div>
+
